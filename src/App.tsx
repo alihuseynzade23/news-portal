@@ -4,6 +4,8 @@ import About from './components/About';
 import Home from './components/Home'
 import Contact from './components/Contact'
 import NewsItem from "./components/NewsItem";
+import LikesDislikesProvider from "./contexts/LikesDislikesContext";
+// import { ContextProvider } from "./context";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +36,9 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={router}/>
+      <LikesDislikesProvider>
+          <RouterProvider router={router}/>
+      </LikesDislikesProvider>
       </>
   )
 }
